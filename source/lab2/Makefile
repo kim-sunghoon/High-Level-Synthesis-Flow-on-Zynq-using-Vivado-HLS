@@ -69,8 +69,8 @@ all: sim
 clean:
 	rm -rf $(CLEAN_FILES) $(VIVADO_HLS_CLEANUP)
 
-VIVADO_HLS: $(DESIGN).tcl
-	VIVADO_HLS $<
+vivado_hls: $(DESIGN).tcl
+	vivado_hls $<
 
 sim: $(DESIGN)
 	./$(DESIGN)
