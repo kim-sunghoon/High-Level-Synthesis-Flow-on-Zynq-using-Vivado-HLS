@@ -11,7 +11,7 @@ CLEAN_FILES  := $(OBJECTS) $(DESIGN) $(DESIGN).exe
 CLEAN_FILES  += test_data/output.dat
 VIVADO_HLS_CLEANUP := $(DESIGN)_prj $(DESIGN).log vivado_hls.log 
 # Change to true if using ap[u]int in ISO-C project or ap_[u]int<> in C++
-USE_ARBITRARY_PRECISION = false
+USE_ARBITRARY_PRECISION = true
 # Change to true if using SystemC types or SC_MODULE, etc.
 USE_SYSTEMC 				= false
 
@@ -69,8 +69,8 @@ all: sim
 clean:
 	rm -rf $(CLEAN_FILES) $(VIVADO_HLS_CLEANUP)
 
-VIVADO_HLS: $(DESIGN).tcl
-	VIVADO_HLS $<
+vivado_hls: $(DESIGN).tcl
+	vivado_hls $<
 
 sim: $(DESIGN)
 	./$(DESIGN)

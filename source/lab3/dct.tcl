@@ -13,4 +13,10 @@ create_clock -period 10ns
 
 csynth_design
 
+cosim_design
+
+export_design -format ip_catalog
+
+close_project
+
 exit
