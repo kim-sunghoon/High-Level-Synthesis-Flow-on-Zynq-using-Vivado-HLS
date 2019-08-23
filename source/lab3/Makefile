@@ -9,7 +9,7 @@ OBJECTS		 := $(SOURCES:.cpp=.o)
 INCLUDES		 := $(DESIGN).h
 CLEAN_FILES  := $(OBJECTS) $(DESIGN) $(DESIGN).exe
 CLEAN_FILES  += test_data/output.dat
-VIVADO_HLS_CLEANUP := $(DESIGN)_prj $(DESIGN).log vivado_hls.log 
+VIVADO_HLS_CLEANUP := $(DESIGN)*prj $(DESIGN).log vivado_hls.log apcc.log
 # Change to true if using ap[u]int in ISO-C project or ap_[u]int<> in C++
 USE_ARBITRARY_PRECISION = true
 # Change to true if using SystemC types or SC_MODULE, etc.
